@@ -2,7 +2,16 @@ import cv2
 import numpy as np
 import time
 from collections import deque
-from hand_detector import HandDetector
+try:
+    from hand_detector_mmpose import HandDetectorMMPose as HandDetector
+    print("✅ Using MMPose hand detector (Python 3.13 compatible)")
+except ImportError:
+    try:
+        from hand_detector import HandDetector
+        print("⚠️ Falling back to MediaPipe hand detector")
+    except ImportError:
+        print("❌ No hand detector available. Please install MMPose: pip install mmpose")
+        raise
 from volume_controller import VolumeController
 
 

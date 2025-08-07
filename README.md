@@ -2,24 +2,30 @@
 
 A computer vision-based volume controller that uses machine learning to detect hand gestures and control your system volume using the distance between your thumb and index finger.
 
+## 🚀 **NEW: Python 3.13 Compatible!**
+Now supports **MMPose** for superior hand detection, ensuring compatibility with the latest Python versions while providing better accuracy and performance than MediaPipe.
+
 ## ✨ Features
 
-- **🤖 AI-Powered Hand Detection**: Uses MediaPipe's neural network models for accurate hand landmark detection
+- **🤖 AI-Powered Hand Detection**: Uses MMPose's advanced neural network models for superior hand landmark detection
+- **🐍 Python 3.13 Compatible**: Full support for the latest Python versions through MMPose integration
 - **👆 Finger Recognition**: Identifies all 5 fingers individually (Thumb, Index, Middle, Ring, Pinky)
 - **📏 Distance-Based Volume Control**: Controls volume based on the distance between thumb and index finger
 - **🎯 Real-Time Processing**: Smooth, responsive volume adjustments with minimal latency
 - **📊 Visual Feedback**: Real-time volume bar, distance display, and finger labeling
 - **⚡ Performance Optimized**: Includes FPS counter and smoothing algorithms
 - **🎛️ Interactive Controls**: Keyboard shortcuts for muting, toggling displays, and more
+- **🔄 Fallback Support**: Graceful degradation when MMPose is not available
 
 ## 🧠 ML & Neural Network Concepts Used
 
 This project incorporates several machine learning and neural network concepts:
 
-1. **MediaPipe Hand Landmarker**: Uses a pre-trained neural network model for:
-   - Hand detection in video frames
-   - 21 3D hand landmark prediction
-   - Hand pose estimation
+1. **MMPose Hand Detection**: Uses state-of-the-art neural network models for:
+   - Advanced hand detection in video frames
+   - 21 3D hand landmark prediction with higher accuracy
+   - Robust hand pose estimation in various conditions
+   - Better performance than MediaPipe in challenging scenarios
 
 2. **Computer Vision Pipeline**:
    - Image preprocessing and BGR to RGB conversion
@@ -40,9 +46,22 @@ This project incorporates several machine learning and neural network concepts:
 
 ### Prerequisites
 
-- Python 3.7 or higher
+- **Python 3.7 or higher** (✅ **Python 3.13 fully supported!**)
 - Webcam/Camera
 - Windows OS (for volume control functionality)
+
+### Two Installation Options
+
+#### Option 1: MMPose (Recommended for Python 3.13+)
+For the best experience with latest Python versions:
+
+```bash
+# Use the MMPose setup
+python setup_mmpose.py
+```
+
+#### Option 2: MediaPipe (Legacy)
+For older Python versions or fallback:
 
 ### Installation
 
